@@ -1,0 +1,89 @@
+@import url('https://fonts.cdnfonts.com/css/funkrocker');
+@import url('https://fonts.cdnfonts.com/css/dark-graffiti-2?styles=163802');
+                
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+.dropdown {
+    @apply text-2xl font-semibold text-white;
+}
+
+@keyframes dropdownEnter {
+    from { opacity: 0; transform: translateX(100%); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes dropdownExit {
+    from { opacity: 1; transform: translateX(0); }
+    to { opacity: 0; transform: translateX(100%); }
+}
+
+@keyframes menuItemEnter {
+    from { opacity: 0;}
+    to { opacity: 1;}
+}
+
+@keyframes menuItemExit {
+    from { opacity: 1; transform: translateX(0); }
+    to { opacity: 0; transform: translateX(50px); }
+}
+
+.dropdown-enter {
+    animation: dropdownEnter 300ms ease-out forwards;
+}
+
+.dropdown-exit {
+    animation: dropdownExit 300ms ease-in forwards;
+}
+
+.menu-item-enter {
+    animation: menuItemEnter 100ms ease-out forwards;
+    opacity: 0;
+}
+
+.menu-item-exit {
+    animation: menuItemExit 300ms ease-in forwards;
+}
+
+.canvas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #150338;
+  border-radius: 16px;
+}
+
+@media (min-width: 750px) {
+    .card-col {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media ((min-width: 320px) and (max-width: 350px)){
+    .herotext1 {
+        font-size: x-small;
+        line-height: 1rem;
+    }
+    .gap1 {
+        gap: 1rem;
+    }
+}
+
+@media ((min-width: 500px) and (max-width: 640px)) {
+    .herotext1 {
+        font-size: small;
+        line-height: 1.25rem;
+    }
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+@layer utilities {
+    .filter-goo {
+      filter: url(#goo);
+    }
+  }
